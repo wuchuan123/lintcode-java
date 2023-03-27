@@ -40,4 +40,10 @@ FROM student A # 表别名 A 只能在select时使用
          INNER JOIN major B
                     ON  A.学号=B.学号
 
-alter table courses add FOREIGN KEY (teacher_id)  REFERENCES teachers (id) # 为表格添加外键 
+alter table courses add FOREIGN KEY (teacher_id)  REFERENCES teachers (id) # 为表格添加外键
+
+select * from employees where hire_date=(select max(hire_date) from employees);
+
+# 找倒数第3个 https://www.runoob.com/note/28032 limit的用法
+select * from employees order by hire_date desc
+limit 2,1;
